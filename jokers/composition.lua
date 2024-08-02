@@ -51,9 +51,9 @@ SMODS.Joker {
         }
     },
     loc_txt = {
-        name = "Composition",
-        text = {"{C:mult}+4{} Mult for each Joker to the left,", "{C:chips}+30{} Chips for each Joker to the right",
-                "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult and {C:chips}+#2#{C:inactive} Chips){}"}
+        name = "构成",
+        text = {"本牌左侧每有一张小丑牌，{C:mult}+4{}倍率", "右侧每有一张小丑牌，{C:chips}+30{}筹码",
+                "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率，{C:chips}+#2#{C:inactive}筹码）"}
     },
     loc_vars = function(self, info_queue, card)
         local effect = kcv_composition_calc_effect(card)

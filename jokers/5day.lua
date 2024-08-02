@@ -36,10 +36,10 @@ SMODS.Joker {
     blueprint_compat = true,
     config = {},
     loc_txt = {
-        name = "Five-Day Forecast",
-        text = {"If played hand contains a {C:attention}Straight{},",
-                "increase played cards' ranks by {C:attention}1{}",
-                "{C:inactive}(Excludes {C:attention}Aces{C:inactive})"}
+        name = "五日天气预报",
+        text = {"如果打出的牌中包含{C:attention}顺子",
+                "则将其中所有牌的点数提升{C:attention}1",
+                "{C:inactive}（不含{C:attention}A{C:inactive}）"}
     },
     loc_vars = function(self, info_queue, card)
         return {

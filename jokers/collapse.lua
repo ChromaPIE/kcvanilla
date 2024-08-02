@@ -15,9 +15,8 @@ SMODS.Joker {
     blueprint_compat = true,
     config = {},
     loc_txt = {
-        name = "Cosmic Collapse",
-        text = {'At end of round, held {C:planet}Planet{}', 'cards each have {C:green}1 in 3{} chance',
-                'to transform into a {C:spectral}Black Hole{}'}
+        name = "宇宙坍缩",
+        text = {'回合结束时，拥有的每张{C:planet}星球牌', '均有{C:green}1/3{}的几率变为{C:spectral}黑洞'}
     },
     loc_vars = function(self, info_queue, card)
         return {
