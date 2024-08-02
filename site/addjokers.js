@@ -12,14 +12,8 @@ let jokers = [
 		rarity: 'Common',
 	},
 	{
-		name: 'Ten-Pin',
-		text: [`If played hand contains a scoring 10, X2 Mult for next 2 hands`],
-		image_url: 'assets/originals/tenpin.png',
-		rarity: 'Common',
-	},
-	{
 		name: 'Robo-Joker',
-		text: ['Steel cards give X1.75 Mult when scored'],
+		text: ['Gains the Chip value of the first scored card ranked 2-10 each round'],
 		image_url: 'assets/originals/robo.png',
 		rarity: 'Common',
 	},
@@ -27,6 +21,12 @@ let jokers = [
 		name: 'Squid',
 		text: ['+5 hand size on final 2 hands of round'],
 		image_url: 'assets/originals/squid.png',
+		rarity: 'Common',
+	},
+	{
+		name: 'Ten-Pin',
+		text: [`If played hand contains a scoring 10, X2 Mult for next 2 hands`],
+		image_url: 'assets/originals/tenpin.png',
 		rarity: 'Common',
 	},
 	{
@@ -43,8 +43,16 @@ let jokers = [
 	},
 	{
 		name: 'Joker-chan',
-		text: ['Copies the abilities of Common Jokers'],
+		text: ['At end of round, gains +2 Mult for each Common Joker'],
 		image_url: 'assets/originals/chan.png',
+		rarity: 'Uncommon',
+	},
+	{
+		name: 'Five-Day Forecast',
+		text: [
+			`If played hand contains a Straight, increase played cards' ranks by 1 (Excludes Aces)`,
+		],
+		image_url: 'assets/originals/5day.png',
 		rarity: 'Uncommon',
 	},
 	{
@@ -58,22 +66,14 @@ let jokers = [
 	{
 		name: 'Joker Energy',
 		text: [
-			'Played Wild cards give one of the following when scored: +8 Mult, +80 Chips, X1.5 Mult, $5',
+			'Played Wild cards give one of the following when scored: +10 Mult, +100 Chips, X2 Mult, $5',
 		],
 		image_url: 'assets/originals/energy.png',
 		rarity: 'Uncommon',
 	},
 	{
-		name: 'Five-Day Forecast',
-		text: [
-			`If played hand contains a Straight, increase played cards' ranks by 1 (Excludes Aces)`,
-		],
-		image_url: 'assets/originals/5day.png',
-		rarity: 'Uncommon',
-	},
-	{
 		name: 'Power Grid',
-		text: ['If a Steel card is held in hand, retrigger played Mult cards'],
+		text: ['Scoring Mult cards gives X0.2 Mult for every Mult card scored this round'],
 		image_url: 'assets/originals/powergrid.png',
 		rarity: 'Uncommon',
 	},
