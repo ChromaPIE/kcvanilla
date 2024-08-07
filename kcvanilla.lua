@@ -4,7 +4,7 @@
 --- MOD_DESCRIPTION: KCVanilla
 --- MOD_AUTHOR: [krackocloud]
 --- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: 0.4.1
+--- VERSION: 0.4.8
 SMODS.Atlas {
     key = 'kcvanillajokeratlas',
     path = "jokeratlas.png",
@@ -26,25 +26,6 @@ function kcv_getJokerAtlasIndex(jokerKey)
         end
     end
     return 0
-end
-
-function kcv_dump(o, depth)
-    depth = depth or 0
-    if depth > 3 then
-        return '...'
-    end
-    if type(o) == 'table' then
-        local s = '{ '
-        for k, v in pairs(o) do
-            if type(k) ~= 'number' then
-                k = '"' .. k .. '"'
-            end
-            s = s .. '[' .. k .. '] = ' .. kcv_dump(v, depth + 1) .. ','
-        end
-        return s .. '} '
-    else
-        return tostring(o)
-    end
 end
 
 function kcv_common_joker_count()

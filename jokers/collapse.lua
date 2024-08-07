@@ -16,11 +16,11 @@ SMODS.Joker {
     config = {},
     loc_txt = {
         name = "宇宙坍缩",
-        text = {'回合结束时，拥有的每张{C:planet}星球牌', '均有{C:green}1/3{}的几率变为{C:spectral}黑洞'}
+        text = {'回合结束时，拥有的每张{C:planet}星球牌', '均有{C:green}#1#/3{}的几率变为{C:spectral}黑洞'}
     },
     loc_vars = function(self, info_queue, card)
         return {
-            vars = {}
+            vars = {'' .. (G.GAME and G.GAME.probabilities.normal or 1)}
         }
     end,
     calculate = function(self, card, context)
@@ -39,8 +39,9 @@ SMODS.Joker {
             end
 
             if #success_planets > 0 then
-                card_eval_status_text(card, 'extra', nil, nil, nil, {
-                    message = "Collapse!"
+                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {
+                    message = "Collapse!",
+                    card = context.blueprint_card or card
                 });
             end
 

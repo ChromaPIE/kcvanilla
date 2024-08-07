@@ -21,29 +21,35 @@ SMODS.Joker {
     loc_txt = {
         name = "Power Grid",
         text = {'Scoring {C:attention}Mult{} cards gives {X:mult,C:white} X#1# {} Mult',
-                'for every {C:attention}Mult{} card scored this round',
-                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult"}
+                'for each {C:attention}Mult{} card scored this round',
+                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"}
     },
     loc_vars = function(self, info_queue, card)
         return {
-            vars = {card.ability.extra, card.ability.cur_xmult}
+            vars = {card.ability.extra, (G.GAME.current_round.kcv_powergrid_xmult or 1)}
         }
     end,
     calculate = function(self, card, context)
+        if context.start_of_round then
+            G.GAME.current_round.kcv_powergrid_xmult = 1
+        end
 
+        -- technically this isn't per-score,
+        -- two powergrids will compound on each other.
+        -- But the code is simpler and the numbers are more fun this way
         if context.individual and context.cardarea == G.play then
-            kcv_log(1)
             local other = context.other_card
-            kcv_log(other.ability.name)
-            if other.ability.name == 'Mult' then
-                card.ability.cur_xmult = card.ability.cur_xmult + card.ability.extra
+            if other.ability.name == 'Mult' and not other.debuff then
+                G.GAME.current_round.kcv_powergrid_xmult = (G.GAME.current_round.kcv_powergrid_xmult or 1) +
+                                                               card.ability.extra
                 return {
-                    x_mult = card.ability.cur_xmult,
-                    card = other
+                    x_mult = G.GAME.current_round.kcv_powergrid_xmult,
+                    card = context.blueprint_card or card
                 }
             end
         end
-        if context.after then
+
+        if context.end_of_round then
             card.ability.cur_xmult = 1
         end
     end

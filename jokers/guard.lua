@@ -28,7 +28,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play and not context.blueprint and not context.other_card.debuff then
             local other_id = context.other_card:get_id()
             if other_id == 12 or other_id == 13 then
                 if card.ability.progress < card.ability.required_progress then
@@ -50,7 +50,7 @@ SMODS.Joker {
         if context.selling_self and card.ability.progress >= card.ability.required_progress and not context.blueprint then
             local candidates = {}
             for i, joker in ipairs(G.jokers.cards) do
-                if joker ~= card then
+                if joker ~= card and not joker.edition then
                     table.insert(candidates, joker)
                 end
             end

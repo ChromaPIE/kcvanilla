@@ -1,8 +1,3 @@
--   confirm rarities and prices
--   test blueprint
 -   test debuffed joker
--   test debuffed playing card
--   confirm enhancement gates
--   .zip releases
 -   better installation steps
 -   add info queues

@@ -12,7 +12,7 @@ let jokers = [
 		rarity: 'Common',
 	},
 	{
-		name: 'Robo-Joker',
+		name: 'Jimbot',
 		text: ['Gains the Chip value of the first scored card ranked 2-10 each round'],
 		image_url: 'assets/originals/robo.png',
 		rarity: 'Common',
@@ -37,7 +37,7 @@ let jokers = [
 	},
 	{
 		name: 'Swiss Joker',
-		text: ['+10 Mult for each unscored card played in previous hand'],
+		text: ['+10 Mult for each card played in previous hand that did not score'],
 		image_url: 'assets/originals/cheese.png',
 		rarity: 'Uncommon',
 	},
@@ -73,7 +73,7 @@ let jokers = [
 	},
 	{
 		name: 'Power Grid',
-		text: ['Scoring Mult cards gives X0.2 Mult for every Mult card scored this round'],
+		text: ['Scoring Mult cards gives X0.2 Mult for each Mult card scored this round'],
 		image_url: 'assets/originals/powergrid.png',
 		rarity: 'Uncommon',
 	},
