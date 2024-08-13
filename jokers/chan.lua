@@ -19,7 +19,7 @@ SMODS.Joker {
     },
     loc_txt = {
         name = "小丑酱",
-        text = {"每拥有一张稀有度为普通的小丑牌", "本牌在回合结束时获得{C:mult}+#1#{}倍率",
+        text = {"每拥有一张{C:blue}普通{}小丑牌", "本牌在回合结束时获得{C:mult}+#1#{}倍率",
                 "{C:inactive}（当前为{C:mult}+#2#{C:inactive}倍率）"}
     },
     loc_vars = function(self, info_queue, card)

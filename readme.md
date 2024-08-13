@@ -1,16 +1,14 @@
 # KCVanilla
 
-A small Joker pack mod for Balatro, featuring plausible, vanilla-style powers and a faithful art style
+Balatro content mod featuring plausible, vanilla-style Jokers and a faithful art style
 
 [Joker list](https://kcgidw.github.io/kcvanilla/)
-
-In development
 
 # Installation
 
 Requires [Steamodded 1.0](https://github.com/Steamopollys/Steamodded)
 
-Unzip the latest release (or pull the repo) into your Mods/ folder.
+Unzip the latest [release](https://github.com/kcgidw/kcvanilla/releases) (or pull the repo) into your Mods/ folder.
 
 # Credits
 
