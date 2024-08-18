@@ -16,7 +16,7 @@ SMODS.Joker {
     config = {},
     loc_txt = {
         name = "宇宙坍缩",
-        text = {'回合结束时，拥有的每张{C:planet}星球牌', '均有{C:green}#1#/3{}的几率变为{C:spectral}黑洞'}
+        text = {'回合结束时，拥有的每张{C:planet}星球牌', '均有{C:green}#1#/2{}的几率变为{C:spectral}黑洞'}
     },
     loc_vars = function(self, info_queue, card)
         return {
@@ -28,8 +28,7 @@ SMODS.Joker {
             local success_planets = {}
             for i, consumable in ipairs(G.consumeables.cards) do
                 if consumable.ability.set == 'Planet' and not consumable.kcv_collapse then
-                    local success = pseudorandom('cosmiccollapse') < G.GAME.probabilities.normal / 3
-                    -- kcv_log('success? ' .. tostring(success))
+                    local success = pseudorandom('cosmiccollapse') < G.GAME.probabilities.normal / 2
                     if success then
                         table.insert(success_planets, consumable)
                         -- ensure dupe jokers don't try to collapse the same card
